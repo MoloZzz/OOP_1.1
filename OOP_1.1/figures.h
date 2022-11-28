@@ -84,6 +84,10 @@ private:
 		return (sqrt(5 * (5 + 2 * (sqrt(5)))) * pow(line,2) / 4);
 	}
 
+	bool is_romb(squere a) {
+		if()
+	}
+
 public:
 	void demo() {
 		triangle newTr = triangle(1, 1, 5, 1, 1, 4);
