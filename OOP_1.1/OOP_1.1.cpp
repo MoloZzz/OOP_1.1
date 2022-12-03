@@ -5,6 +5,6 @@
 
 int main()
 {
-	figures newF;
+	tests newF;
 	newF.demo();
 }

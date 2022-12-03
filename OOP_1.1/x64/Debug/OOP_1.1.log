@@ -1,2 +1,29 @@
 ﻿  OOP_1.1.cpp
-C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(88,6): error C2059: syntax error: ')'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(118,11): warning C4805: '==': unsafe mix of type 'bool' and type 'double' in operation
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(155,11): warning C4805: '==': unsafe mix of type 'bool' and type 'double' in operation
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(155,66): warning C4805: '==': unsafe mix of type 'bool' and type 'double' in operation
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(173,12): warning C4805: '==': unsafe mix of type 'bool' and type 'double' in operation
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(173,67): warning C4805: '==': unsafe mix of type 'bool' and type 'double' in operation
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(233,14): warning C4584: 'tests': base-class 'figures' is already a base-class of 'functions'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(7,7): message : see declaration of 'figures'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(56,7): message : see declaration of 'functions'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(233,24): warning C4584: 'tests': base-class 'figures' is already a base-class of 'list<figures::triangle>'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(7,7): message : see declaration of 'figures'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(233,32): message : see declaration of 'list<figures::triangle>'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(192,16): error C2512: 'figures::triangle': no appropriate default constructor available
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(9,9): message : see declaration of 'figures::triangle'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(192,1): message : while compiling class template member function 'list<figures::triangle>::node::node(T)'
+          with
+          [
+              T=figures::triangle
+          ]
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(211,16): message : see reference to function template instantiation 'list<figures::triangle>::node::node(T)' being compiled
+          with
+          [
+              T=figures::triangle
+          ]
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(203,1): message : see reference to class template instantiation 'list<figures::triangle>::node' being compiled
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(201,1): message : while compiling class template member function 'void list<figures::triangle>::add(figures::triangle)'
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(244,5): message : see reference to function template instantiation 'void list<figures::triangle>::add(figures::triangle)' being compiled
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(233,56): message : see reference to class template instantiation 'list<figures::triangle>' being compiled
+C:\Users\user\source\repos\OOP_1.1\OOP_1.1\figures.h(194,1): error C2112: '-': pointer subtraction requires integral or pointer operand
