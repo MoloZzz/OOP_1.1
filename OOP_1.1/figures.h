@@ -5,8 +5,10 @@
 using namespace std;
 
 class figures {
+};
+
+class triangle : public figures {
 public:
-	struct triangle {
 		double x1, y1, x2, y2, x3, y3;
 
 		triangle(double x1, double y1, double x2, double y2, double x3, double y3) {
@@ -17,12 +19,13 @@ public:
 			this->x3 = x3;
 			this->y3 = y3;
 		}
-	};
+};
 
-	struct squere {
+class square : public figures {
+public:
 		double x1, y1, x2, y2, x3, y3, x4, y4;
 
-		squere(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
+		square(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
 			this->x1 = x1;
 			this->y1 = y1;
 			this->x2 = x2;
@@ -32,9 +35,10 @@ public:
 			this->x4 = x4;
 			this->y4 = y4;
 		}
-	};
+};
 
-	struct pentagon {
+class pentagon : public figures {
+public:
 		double x1, y1, x2, y2, x3, y3, x4, y4, x5, y5;
 
 		pentagon(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double x5, double y5) {
@@ -50,18 +54,16 @@ public:
 			this->y5 = y5;
 		}
 
-	};
 };
 
-class functions : public figures {
-
-protected:
+class functions{
+public:
 
 	double get_P(triangle a) {
 		return (sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2)) + sqrt(pow((a.x3 - a.x2), 2) + pow((a.y3 - a.y2), 2)) + sqrt(pow((a.x3 - a.x1), 2) + pow((a.y3 - a.y1), 2)));
 	}
 
-	double get_P(squere a) {
+	double get_P(square a) {
 		return (sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2)) + sqrt(pow((a.x3 - a.x2), 2) + pow((a.y3 - a.y2), 2)) + sqrt(pow((a.x3 - a.x4), 2) + pow((a.y3 - a.y4), 2)) + sqrt(pow((a.x1 - a.x4), 2) + pow((a.y1 - a.y4), 2)));
 	}
 
@@ -69,7 +71,7 @@ protected:
 		return (sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2)) + sqrt(pow((a.x3 - a.x2), 2) + pow((a.y3 - a.y2), 2)) + sqrt(pow((a.x3 - a.x4), 2) + pow((a.y3 - a.y4), 2)) + sqrt(pow((a.x5 - a.x4), 2) + pow((a.y5 - a.y4), 2)) + sqrt(pow((a.x5 - a.x1), 2) + pow((a.y5 - a.y1), 2)));
 	}
 
-	double get_S(squere a) {
+	double get_S(square a) {
 		//  line1 = sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2));
 		//  line2 = sqrt(pow((a.x2 - a.x3), 2) + pow((a.y2 - a.y3), 2));
 		return sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2)) * sqrt(pow((a.x2 - a.x3), 2) + pow((a.y2 - a.y3), 2));
@@ -123,7 +125,7 @@ protected:
 		}
 	}
 
-	bool is_rectangle(squere a) {
+	bool is_rectangle(square a) {
 		/* 
 		line1 = sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2))
 		line2 = sqrt(pow((a.x2 - a.x3), 2) + pow((a.y2 - a.y3), 2))
@@ -150,7 +152,8 @@ protected:
 		
 	}
 
-	bool is_paralelogram(squere a) {
+
+	bool is_paralelogram(square a) {
 		if (sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2)) == sqrt(pow((a.x2 - a.x3), 2) + pow((a.y2 - a.y3), 2))
 			== sqrt(pow((a.x3 - a.x4), 2) + pow((a.y3 - a.y4), 2)) == sqrt(pow((a.x1 - a.x4), 2) + pow((a.y1 - a.y4), 2))) {
 			return true;
@@ -160,14 +163,14 @@ protected:
 		}
 	}
 
-	bool is_romb(squere a) {
+	bool is_romb(square a) {
 		if (is_paralelogram(a) && is_right(triangle(a.x1,a.y1,a.x2,a.y2,(a.x2 + a.x4)/2, (a.y2 + a.y4) / 2))){
 			return true;
 		}
 		else return false;
 	}
 
-	bool is_squere(squere a) {
+	bool is_squere(square a) {
 		if (is_rectangle(a) && 
 			(sqrt(pow((a.x2 - a.x1), 2) + pow((a.y2 - a.y1), 2)) == sqrt(pow((a.x3 - a.x2), 2) + pow((a.y3 - a.y2), 2)) 
 				== sqrt(pow((a.x3 - a.x4), 2) + pow((a.y3 - a.y4), 2)) == sqrt(pow((a.x1 - a.x4), 2) + pow((a.y1 - a.y4), 2)))) {
@@ -181,67 +184,3 @@ protected:
 
 };
 
-template<class T>
-class list : protected figures {
-public:
-	
-	struct node {
-		T data;
-		struct node *next;
-		
-		node(T data) {
-			this->data = data;
-			this->next - nullptr;
-		}
-
-	};
-
-	node *head = nullptr;
-
-	void add(triangle A) {
-		if (head == nullptr) {
-			head->data = A;
-			head->next = nullptr;
-		}
-		else {
-			node* temp = head;
-			while (temp->next != nullptr) {
-				temp = temp->next;
-			}
-			node newNode(A);
-			temp->next = &newNode;
-
-		}
-	}
-
-	void print() {
-		if (head == nullptr) {
-			cout << "List is empty" << endl;
-		}
-		else {
-			node* temp = head;
-			
-			do {
-				cout << 1;
-			} while (temp->next != nullptr);
-
-		}
-	}
-
-};
-
-class tests: functions,figures,list<figures::triangle> {
-public:
-
-void demo() {
-
-	triangle newTr = triangle(1, 1, 5, 1, 1, 4);
-
-	squere newSq = squere(0, 0, 0, 5, 5, 5, 5, 0);
-
-	pentagon newPn = pentagon(0, 8, 6, 5, 6, -1, -2, -4, -5, -3);
-
-	add(newTr);
-}
-
-};
